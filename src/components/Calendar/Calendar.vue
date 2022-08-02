@@ -121,7 +121,7 @@ export default {
         {
           // Navigation pane
           default: ({ data }) => {
-            const { position, page } = data;
+            const { position, page } = data || {};
             return h(
               CalendarNav,
               {

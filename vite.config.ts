@@ -1,11 +1,20 @@
 import type { UserConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import eslintPlugin from 'vite-plugin-eslint';
 import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 const config: UserConfig = {
-  plugins: [vue()],
+  plugins: [eslintPlugin(), vue()],
   build: {
+    target: [
+      'chrome63',
+      'edge79',
+      'firefox67',
+      'ios11',
+      'opera50',
+      'safari11.1',
+    ],
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'v-calendar',

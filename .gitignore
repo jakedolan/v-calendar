@@ -4,6 +4,7 @@ node_modules
 /lib
 docs/.vuepress/dist
 /testumdbuild
+.history
 
 # local env files
 .env.local

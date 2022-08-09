@@ -148,7 +148,7 @@ export default {
         },
         {
           default: ({ data: day, updateLayout, hide }) => {
-            const attributes = Object.values(day.attributes).filter(
+            const attributes = Object.values(day?.attributes || {}).filter(
               a => a.popover,
             );
             const masks = this.$locale.masks;

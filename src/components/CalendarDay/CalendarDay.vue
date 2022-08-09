@@ -47,8 +47,8 @@ export default {
     const contentLayer = () =>
       this.safeSlot('day-content', {
         day: this.day,
-        attributes: this.day.attributes,
-        attributesMap: this.day.attributesMap,
+        attributes: this.day?.attributes,
+        attributesMap: this.day?.attributesMap,
         dayProps: this.dayContentProps,
         dayEvents: this.dayContentEvents,
       }) ||
@@ -264,7 +264,7 @@ export default {
         popovers: [],
         content: [],
       };
-      this.day.attributes = Object.values(this.day.attributesMap || {}).sort(
+      this.day.attributes = Object.values(this.day?.attributesMap || {}).sort(
         (a, b) => a.order - b.order,
       );
       this.day.attributes.forEach(attr => {

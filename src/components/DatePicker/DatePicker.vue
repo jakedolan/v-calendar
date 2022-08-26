@@ -431,7 +431,7 @@ export default {
         case ' ':
         case 'Enter': {
           this.handleDayClick(day);
-          day.event.preventDefault();
+          day?.event?.preventDefault();
           break;
         }
         case 'Escape': {

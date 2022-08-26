@@ -155,7 +155,7 @@ export const onSpaceOrEnter = (
   event: KeyboardEvent,
   handler: EventHandlerNonNull,
 ) => {
-  if (event.key === ' ' || event.key === 'Enter') {
+  if (event && (event.key === ' ' || event.key === 'Enter')) {
     handler(event);
     event.preventDefault();
   }

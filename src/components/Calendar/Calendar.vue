@@ -202,7 +202,7 @@ export default {
           },
         ],
         onKeydown: this.handleKeydown,
-        onMouseup: e => e.preventDefault(),
+        onMouseup: e => e?.preventDefault(),
         ref: 'container',
       },
       [
@@ -800,7 +800,7 @@ export default {
         }
       }
       if (newDate) {
-        event.preventDefault();
+        event?.preventDefault();
         this.focusDate(newDate).catch();
       }
     },

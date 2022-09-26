@@ -148,16 +148,17 @@ export default {
         },
         {
           default: ({ data: day, updateLayout, hide }) => {
-            const attributes = Object.values(day?.attributes || {}).filter(
+            const safeDay = day || {};
+            const attributes = Object.values(safeDay.attributes || {}).filter(
               a => a.popover,
             );
             const masks = this.$locale.masks;
             const format = this.formatDate;
-            const dayTitle = format(day.date, masks.dayPopover);
+            const dayTitle = format(safeDay.date, masks.dayPopover);
             return this.safeSlot(
               'day-popover',
               {
-                day,
+                safeDay,
                 attributes,
                 masks,
                 format,
